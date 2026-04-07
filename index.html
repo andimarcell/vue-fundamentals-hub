@@ -8,14 +8,17 @@
     <title>VueJS Basic</title>
 </head>
 
-<body class="">
-  <div class="container">
-    <!-- harusnya img belum ada sampe commit ini dibuat -->
-    <div class="col-sm-4">
-      <img class="img-fluid" v-bind:src="image" v-bind:alt="name">
-      <h1>{{ name }}</h1>
-      <p>{{ description }}</p>
-      <div class="h3">Rp{{ price }}</div>
+<body class="" >
+  <div class="container" id="app">
+    <div class="row d-flex bm-3 align-items-center" v-for="item in products">
+      <div class="col-sm-4">
+        <img class="img-fluid d-block" :src="item.image" :alt="item.name">
+        </div>
+      <div class="col">
+        <h1 class="text-info">{{ item.name }}</h1>
+        <p class="mb-0">{{ item.description }}</p>
+        <div class="h5 float-right">Rp{{ item.price }}</div>
+      </div>
     </div>
   </div>
 
