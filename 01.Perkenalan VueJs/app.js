@@ -6,7 +6,7 @@ var app = new Vue({
     cart: [],
   }, 
   mounted: function() {
-    fetch('https://hplussport.com/api/products/order/price')
+    fetch('products.json')
     .then(response => response.json())
     .then(data => {
       console.log(data);
