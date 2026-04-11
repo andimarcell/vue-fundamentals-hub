@@ -7,7 +7,7 @@ var app = new Vue({
         style: {
             label: ['font-weight-bold', 'mr-2'],
             inputwidth: 60,
-            sliderState: false,
+            sliderStatus: false,
         }
     },
     mounted: function() {
@@ -19,7 +19,7 @@ var app = new Vue({
     },
     computed: {
         sliderState: function() {
-            return this.style.sliderState ? 'd-flex' : 'd-none';
+            return this.style.sliderStatus ? 'd-flex' : 'd-none';
         }
     },
     methods: {
