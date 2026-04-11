@@ -6,6 +6,8 @@ var app = new Vue({
         cart: [],
         style: {
             label: ['font-weight-bold', 'mr-2'],
+            inputwidth: 60,
+            sliderState: false,
         }
     },
     mounted: function() {
@@ -14,6 +16,11 @@ var app = new Vue({
         .then(data => {
             this.products = data;
         });
+    },
+    computed: {
+        sliderState: function() {
+            return this.style.sliderState ? 'd-flex' : 'd-none';
+        }
     },
     methods: {
         addItem: function (product) {
