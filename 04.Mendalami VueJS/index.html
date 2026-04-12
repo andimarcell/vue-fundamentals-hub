@@ -45,21 +45,25 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-              <b>cart:</b>
-              <span class="badge badge-pill badge-success"
-                >{{ cart.length }}</span
-              >
+              <span class="badge badge-pill badge-success">{{ cartQty }}</span>
+              <i class="fas fa-shoping-cart mx-2"></i>
+              {{ cartTotal | currencyFormat }}
             </button>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownCart">
-                <div v-for="(item,index) in cart" :key="index">
-                    <div class="dropdown-item-text text-nowrap text-right">
-                        <span class="badge bacge-pill badge-warning align-text-top mr-1">
-                            {{ item.qty }}
-                        </span>
-                        {{ item.product.name }}
-                        <b>{{ item.product.price * item.qty | currencyFormat }}</b>
-                    </div>
+            <div
+              class="dropdown-menu dropdown-menu-right"
+              aria-labelledby="dropdownCart"
+            >
+              <div v-for="(item,index) in cart" :key="index">
+                <div class="dropdown-item-text text-nowrap text-right">
+                  <span
+                    class="badge bacge-pill badge-warning align-text-top mr-1"
+                  >
+                    {{ item.qty }}
+                  </span>
+                  {{ item.product.name }}
+                  <b>{{ item.product.price * item.qty | currencyFormat }}</b>
                 </div>
+              </div>
             </div>
           </div>
         </div>
