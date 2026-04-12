@@ -73,6 +73,13 @@ var app = new Vue({
             } else {
                 this.cart.push({product: product, qty: 1});
             }
+        },
+        deleteItem: function() {
+            if (this.cart[key].qty > 1) {
+                this.cart[key].qty--;
+            } else {
+                this.cart.splice(key, 1);
+            }
         }
     }
 });
