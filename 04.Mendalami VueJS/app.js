@@ -1,3 +1,5 @@
+
+
 var app = new Vue({
     el: '#app',
     data: {
@@ -16,6 +18,11 @@ var app = new Vue({
         .then(data => {
             this.products = data;
         });
+    },
+    filters: {
+      currencyFormat: function(value) {
+          return 'Rp' + Number.parseFloat(value).toFixed(3);
+      }  
     },
     computed: {
         sliderState: function() {
