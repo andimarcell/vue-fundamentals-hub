@@ -1,3 +1,14 @@
+Vue.component('price', {
+    data: function() {
+        return {
+            prefix: 'Rp',
+            value: 34.00,
+            precision: 3,
+        }
+    },
+    template: `<span>{{ this.prefix + Number.parseFloat(this.value).toFixed(this.precision) }}</span>`
+})
+
 var app = new Vue({
     el: '#app',
     data: {
@@ -6,7 +17,7 @@ var app = new Vue({
         cart: [],
         style: {
             label: ['font-weight-bold', 'mr-2'],
-            inputwidth: 60,
+            inputWidth: 60,
             sliderStatus: false,
         }
     },
